@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TheHeader from './components/TheHeader/TheHeader'
 import TheFooter from './components/The Footer/TheFooter'
 
@@ -15,6 +15,8 @@ const headerLinks = [
 function App() {
   // 1st Hook: useState Hook
   const [counter, setCounter] = useState(0);
+  const [showHeader, setShowHeader] = useState(true);
+  console.log("showHeader: ", showHeader);
 
   // const handleIncrease = () => setCounter( (preValue) => ++preValue );
   // const handleDecrease = () => setCounter( (preValue) => --preValue );
@@ -26,9 +28,34 @@ function App() {
     else setCounter( 0 );
   }
 
+  // Component Lifecycle Steps:
+  // 1. Mount  === Created
+  // 2. Updated
+  // 3. UnMount === Deleted
+
+  // Not available since : React 19
+  console.log("Hello from Before useEffect");
+  // Will be fired everytime
+  useEffect( ()=>{
+    console.log("Hello from useEffect 0");
+  });
+  // Will be fired once after mount
+  useEffect( ()=>{
+    console.log("Hello from useEffect 1");
+  }, []);
+  // Will be fired after mount and every change in counter state
+  useEffect( ()=>{
+    console.log("Hello from useEffect 2");
+  }, [counter]);
+  console.log("Hello from After useEffect");
+
   return (
     <div className='app'>
-      <TheHeader headerLinks={headerLinks} />
+      <h1>Hello React</h1> 
+      <button onClick={ ()=>setShowHeader(prev=>!prev) }>
+        Toggle Show Title
+      </button>
+      { showHeader && <TheHeader headerLinks={headerLinks} /> }
       <main>
         <section>
           <h2>Hello React.js</h2>
