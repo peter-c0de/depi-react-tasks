@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TheHeader from './components/TheHeader/TheHeader'
 import TheFooter from './components/The Footer/TheFooter'
 
@@ -12,6 +13,7 @@ const headerLinks = [
 ];
 
 function App() {
+  const [counter, setCounter] = useState(0);
   return (
     <div className='app'>
       <TheHeader headerLinks={headerLinks} />
