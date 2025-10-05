@@ -3,10 +3,18 @@ import TheFooter from './components/The Footer/TheFooter'
 
 import './App.css'
 
+const headerLinks = [
+  { title: "Shop", path: "/shop"},
+  { title: "On Sale", path: "/on-sale"},
+  { title: "New Arrivals", path: "/new-arrivals"},
+  { title: "Brands", path: "/brands"},
+  { title: "White Friday", path: "/white-friday"},
+];
+
 function App() {
   return (
     <div className='app'>
-      <TheHeader />
+      <TheHeader headerLinks={headerLinks} />
       <main>
         <section>
           <h2>Hello React.js</h2>
