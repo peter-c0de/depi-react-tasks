@@ -9,11 +9,11 @@ function TheHeader({headerLinks}){
                     {/* <li>Home</li> */}
                     {/* <li>About</li> */}
                     {/* <li>Contact Us</li> */}
-                    {headerLinks.map(({ title,path }) => {
-                        return <li>
+                    {headerLinks.map(({ title,path }) => (
+                        <li key={path}>
                             <a href={path}>{title}</a>
-                        </li>;
-                    })
+                        </li>
+                    ))
                     }
                 </ul>
             </nav>
