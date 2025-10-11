@@ -1,0 +1,9 @@
+.nav-item a{
+    /* color: hsl(var(--black)); */
+    color: black;
+}
+
+.nav-item a.active {
+    /* color: hst(var(--blue)); */
+    color: blue;
+}

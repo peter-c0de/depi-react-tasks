@@ -1,25 +1,33 @@
-import { useEffect } from "react";
-import './TheHeader.css'
+import { NavLink } from "react-router";
+import { Container, Nav } from "react-bootstrap";
 
-function TheHeader({headerLinks}){
-    // console.log(props);
+import "./TheHeader.css"
+
+const navLinks = [
+    { path:'/', name:"Home"},
+    { path:'/cart', name:"Cart"},
+    { path:'/product-details', name:"Product Details"},
+    { path:'/category', name:"Category"},
+    { path:'/login', name:"Login"},
+    { path:'/register', name:"Register"},
+]
+
+function TheHeader(){
     return (
         <header>
-            <nav>
-                <ul>
-                    {/* <li>Home</li> */}
-                    {/* <li>About</li> */}
-                    {/* <li>Contact Us</li> */}
-                    {headerLinks.map(({ title,path }) => (
-                        <li key={path}>
-                            <a href={path}>{title}</a>
-                        </li>
-                    ))
-                    }
-                </ul>
-            </nav>
+            <Container>
+                <Nav>
+                    <ul className="nav-list">
+                        {navLinks.map(({path,name}) => (
+                            <li key={path} className="nav-item">
+                                <NavLink to={path}>{name}</NavLink>
+                            </li>
+                        ))}
+                    </ul>
+                </Nav>
+            </Container>
         </header>
-    );
+      );
 }
 
 export default TheHeader;
