@@ -3,7 +3,7 @@ import './TheFooter.css'
 
 function TheFooter(){
     return (
-        <footer>
+        <footer className="hamada">
             <Container>
                 <p className="text-center">react project copyrights</p>
             </Container>

@@ -4,6 +4,10 @@
 }
 
 .nav-item a.active {
-    /* color: hst(var(--blue)); */
+    /* color: hsl(var(--blue)); */
     color: blue;
+}
+
+.hamada {
+    background-color: red;
 }

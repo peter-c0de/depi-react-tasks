@@ -9,6 +9,9 @@ import useFetching from "../../hooks/useFetching";
 const URL = "https://fakestoreapi.com/products/";
 
 function ProductDetails() {
+
+    console.log("ProductDetails component");
+
     // Moved to: src/hooks/useFetching.jsx
     // const {id} = useParams();
 

@@ -10,11 +10,12 @@ const navLinks = [
     { path:'/category', name:"Category"},
     { path:'/login', name:"Login"},
     { path:'/register', name:"Register"},
+    { path:'/admin', name:"Admin"},
 ]
 
 function TheHeader(){
     return (
-        <header>
+        <header className="hamada">
             <Container>
                 <Nav>
                     <ul className="nav-list">
