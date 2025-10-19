@@ -8,6 +8,17 @@
     color: blue;
 }
 
-.hamada {
-    background-color: red;
+/* Will Not Work */
+/* .header .nav-list{
+    display: none;
+} */
+
+/* This will work -> :global(.nav-list) */
+.header :global(.nav-list){
+    /* display: none; */
+}
+
+.nav-link {
+    composes: header;
+    /* composes: header from "../TheFooter/TheFooter.module.css */
 }

@@ -1,7 +1,8 @@
 import { NavLink } from "react-router";
 import { Container, Nav } from "react-bootstrap";
 
-import "./TheHeader.css"
+// import "./TheHeader.css"
+import classes from "./TheHeader.module.css"
 
 const navLinks = [
     { path:'/', name:"Home"},
@@ -15,7 +16,8 @@ const navLinks = [
 
 function TheHeader(){
     return (
-        <header className="hamada">
+        // <header className="hamada">
+        <header className={classes["header"]}>
             <Container>
                 <Nav>
                     <ul className="nav-list">
