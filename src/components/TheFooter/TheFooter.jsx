@@ -11,7 +11,9 @@ function TheFooter(props){
             <Container>
                 <p className="text-center">react project copyrights</p>
             </Container>
-            <p>This component is child to {props.from}</p>
+            {props.from && <p>This component is child to {props.from}</p>}
+            {props.children}
+            {props.myTag && props.myTag}
         </footer>
     );
 }
