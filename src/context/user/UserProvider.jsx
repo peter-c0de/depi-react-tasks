@@ -4,9 +4,11 @@ import UserContext from "./UserContext";
 function UserProvider({ children }){
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    <UserContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-        {children}
-    </UserContext.Provider>
+    return(
+        <UserContext value={{ isLoggedIn, setIsLoggedIn, myName: "Peter" }}>
+            {children}
+        </UserContext>
+    );
 }
 
 export default UserProvider;

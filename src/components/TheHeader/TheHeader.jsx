@@ -3,6 +3,8 @@ import { Container, Nav } from "react-bootstrap";
 
 // import "./TheHeader.css"
 import classes from "./TheHeader.module.css"
+import { useContext } from "react";
+import UserContext from "@/context/user/UserContext";
 
 const navLinks = [
     { path:'/', name:"Home"},
@@ -15,6 +17,8 @@ const navLinks = [
 ]
 
 function TheHeader(){
+    const all = useContext(UserContext); // hook
+    // console.log("TheHeader ~ all:", all);
     return (
         // <header className="hamada">
         <header className={classes["header"]}>

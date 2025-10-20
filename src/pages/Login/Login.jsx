@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useNavigate } from "react-router";
+import { useContext, useState } from "react";
 import './Login.css';
+import UserContext from "@/context/user/UserContext";
 
 // Controlled Component
 const userInitialValues = {
@@ -9,6 +11,11 @@ const userInitialValues = {
 };
 function Login() {
 
+    const navigate = useNavigate();
+    // const {isLoggedIn, setIsLoggedIn, myName} = useContext(UserContext);
+    // console.log(isLoggedIn, setIsLoggedIn, myName);
+    const {isLoggedIn, setIsLoggedIn} = useContext(UserContext);
+    console.log("isLoggedIn:", isLoggedIn);
     const [userData, setUserData] = useState(userInitialValues);
 
     const handleChange = (e) => {
@@ -19,12 +26,17 @@ function Login() {
     // console.log("userData: ", userData);
 
     const handleSubmit=(e)=>{
+        console.log("Redirect to product-details after 2s");
         e.preventDefault();
         // console.log("handleSubmit");
         // Sending Data
         // ...
         // Reset Data
         setUserData(userInitialValues);
+        setIsLoggedIn(true);
+        setTimeout( ()=>{
+            navigate('/product-details/20');
+        }, 2000);
     }
 
     return(
