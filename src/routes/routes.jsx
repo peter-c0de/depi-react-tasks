@@ -10,6 +10,7 @@ import AuthLayout from "@/Layout/AuthLayout/AuthLayout";
 import Home from "@/pages/Home/Home";
 import Cart from "@/pages/Cart/Cart";
 import Category from "@/pages/Category/Category";
+import Products from "@/pages/Products/Products";
 import ProductDetails from "@/pages/ProductDetails/ProductDetails";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
@@ -55,6 +56,16 @@ const router = createBrowserRouter([
                         Component: Category,
                     },
                     {
+                        path: "products",
+                        Component: Products,
+                        // children: [
+                        //     {
+                        //         path: "product-details/:id",
+                        //         Component: ProductDetails,
+                        //     },
+                        // ],
+                    },
+                    {
                         path: "admin",
                         Component: Admin,
                         middleware: [authMiddleware]
@@ -64,6 +75,7 @@ const router = createBrowserRouter([
                         Component: NotFound,
                     },
                     {
+                        // path: "product-details/:id?",
                         path: "product-details/:id",
                         Component: ProductDetails,
                         loader: async(params) => {
@@ -85,6 +97,16 @@ const router = createBrowserRouter([
                     {
                         path: "register",
                         Component: Register,
+                        // action: async(params) => {
+                        action: async({request}) => {
+                            let formData = await request.formData();
+                            // let username = formData.get("username");
+                            // console.log("params:", params);
+                            const data = Object.fromEntries(formData.entries());
+                            // console.log(username);
+                            console.log("~formData:", data);
+                            return {message: "Success add new user"};
+                        },
                     },
                 ],
             },
