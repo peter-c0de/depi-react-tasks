@@ -1,16 +1,15 @@
 // import TheHeader from "./../../components/TheHeader/TheHeader";
 import TheFooter from "@/components/TheFooter/TheFooter";
+import { Fragment } from "react";
 
 function Home() {
-    return <div className="home-page">
-        {/* <TheHeader /> */}
-        Home
-        {/* <TheFooter from="Home Page" /> */}
-        {/* Props as Children */}
-        <TheFooter from="Home Page" myTag={<div>Hi</div>}>
-            <p>This p is from Home Page</p>
-        </TheFooter>
-    </div>;
+    return (
+        <Fragment key={"sd"}>
+            <div className="home-page">
+                <h1>Home Page</h1>
+            </div>
+        </Fragment>
+    );
 }
 
 export default Home;
